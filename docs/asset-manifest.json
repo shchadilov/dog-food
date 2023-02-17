@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.3281c0e2.css",
-    "main.js": "/static/js/main.9392d467.js",
-    "static/media/logo.svg": "/static/media/logo.451d3e7a122ed0d35f9fbc7c206aeef3.svg",
-    "static/media/logo_min.svg": "/static/media/logo_min.11e76a78dc5e393c9fa1de96b290c881.svg",
-    "static/media/ic-profile.svg": "/static/media/ic-profile.88459b659812d74c083cb437414a35d1.svg",
-    "index.html": "/index.html",
-    "static/media/circle-xmark-regular.svg": "/static/media/circle-xmark-regular.3c4b225d898d2b54b9f5fbecb83ac8cc.svg",
-    "static/media/xmark-solid.svg": "/static/media/xmark-solid.5ef1222a816bde743a175e947811d385.svg",
-    "static/media/magnifying-glass-solid.svg": "/static/media/magnifying-glass-solid.bf7c00a4cf3b50288170bca48fe9fd9a.svg",
-    "main.3281c0e2.css.map": "/static/css/main.3281c0e2.css.map",
-    "main.9392d467.js.map": "/static/js/main.9392d467.js.map"
+    "main.css": "/dog-food/static/css/main.3281c0e2.css",
+    "main.js": "/dog-food/static/js/main.ee7f88cc.js",
+    "static/media/logo.svg": "/dog-food/static/media/logo.451d3e7a122ed0d35f9fbc7c206aeef3.svg",
+    "static/media/logo_min.svg": "/dog-food/static/media/logo_min.11e76a78dc5e393c9fa1de96b290c881.svg",
+    "static/media/ic-profile.svg": "/dog-food/static/media/ic-profile.88459b659812d74c083cb437414a35d1.svg",
+    "index.html": "/dog-food/index.html",
+    "static/media/circle-xmark-regular.svg": "/dog-food/static/media/circle-xmark-regular.3c4b225d898d2b54b9f5fbecb83ac8cc.svg",
+    "static/media/xmark-solid.svg": "/dog-food/static/media/xmark-solid.5ef1222a816bde743a175e947811d385.svg",
+    "static/media/magnifying-glass-solid.svg": "/dog-food/static/media/magnifying-glass-solid.bf7c00a4cf3b50288170bca48fe9fd9a.svg",
+    "main.3281c0e2.css.map": "/dog-food/static/css/main.3281c0e2.css.map",
+    "main.ee7f88cc.js.map": "/dog-food/static/js/main.ee7f88cc.js.map"
   },
   "entrypoints": [
     "static/css/main.3281c0e2.css",
-    "static/js/main.9392d467.js"
+    "static/js/main.ee7f88cc.js"
   ]
 }
