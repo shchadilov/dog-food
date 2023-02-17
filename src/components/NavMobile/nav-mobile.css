@@ -1,0 +1,22 @@
+.nav-mobile {
+  background: white;
+  position: sticky;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  justify-content: flex-end;
+  box-shadow: 0 -1px 10px lightgray;
+  z-index: 1;
+}
+
+.nav-mobile__icon {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon__title {
+  font-size: 12px;
+}

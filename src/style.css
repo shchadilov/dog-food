@@ -1,0 +1,155 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 100px auto 50px;
+}
+
+.container header {
+  padding: 0 calc(50% - 720px);
+}
+
+.container main {
+  padding: 0 calc(50% - 600px);
+  background-color: white;
+}
+
+.container footer {
+  padding: 0 calc(50% - 600px);
+}
+
+.greeting {
+  margin-top: 20px;
+}
+
+.banners {
+  margin: 20px 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.banners a {
+  display: block;
+}
+
+.banner img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
+}
+
+.banner_big, .banner-link_big {
+  grid-row-end: span 2;
+}
+
+button.btn {
+  border: none;
+  height: 30px;
+  padding: 1px 10px;
+  border-radius: 10px;
+  background-color: gold;
+}
+
+button.link {
+  background-color: transparent;
+  border: 1px solid gold;
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin-bottom: 10px;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+@media (max-width: 1260px) {
+  .container>* {
+    padding: 0 30px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .greeting {
+    margin-top: 10px;    
+  }
+
+  .banners {
+    margin: 10px 0;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .banner_big {
+    width: 500px;
+  }  
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-rows: 50px auto 50px;
+  }
+
+  .container>* {
+    padding: 0 30px;
+  }
+
+  header .search {
+    justify-content: flex-end;
+  }
+
+  header .menu {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner_big {
+    width: auto;
+  }
+}
+
+@media (max-width: 350px) {
+  .logo {
+    display: none;
+  }
+
+  header .search {
+    justify-content: center;
+  }
+}
+
+

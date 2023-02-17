@@ -1,0 +1,19 @@
+.greeting {
+  background-color: mediumspringgreen;
+  padding: 1.5em;
+  border-radius: 20px;
+}
+
+.greeting__title {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 1em; 
+  margin-bottom: 0.1em;
+}
+
+.greeting__subtitle {
+  font-size: 1.2em;
+  line-height: 1em; 
+}
+
