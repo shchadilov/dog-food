@@ -1,5 +1,6 @@
-import React from "react";
+import React from 'react';
 import './greeting.css';
+import { Link } from 'react-router-dom';
 
 export default function Greeting() {
   return (
@@ -11,7 +12,7 @@ export default function Greeting() {
       </div>
       <div className="greeting__subtitle">
         Всегда свежие лакомства ручной <br />
-        работы с доставкой по России и Миру
+        работы с доставкой по России и Миру <Link to="/catalog">Ссылка</Link>
       </div>
     </div>
   );

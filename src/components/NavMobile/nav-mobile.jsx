@@ -1,20 +1,9 @@
-import React from "react";
+import React from 'react';
 import './nav-mobile.css';
 
 import profileIcon from './img/ic-profile.svg';
 
-export default function NavMobile({ user, setUser, setModalActive }) {
-  const logIn = (e) => {
-    e.preventDefault();
-    setModalActive(prev => !prev);
-  }
-
-  const logOut = (e) => {
-    e.preventDefault();
-    localStorage.removeItem('user');
-    setUser('');
-  }
-
+export default function NavMobile({ user, logIn, logOut }) {
   return (
     <nav className="nav-mobile">
       {!user && 

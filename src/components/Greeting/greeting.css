@@ -1,7 +1,8 @@
 .greeting {
-  background-color: mediumspringgreen;
+  background-color: #42f0ad;
   padding: 1.5em;
   border-radius: 20px;
+  color: #1a1a1a;
 }
 
 .greeting__title {

@@ -5,7 +5,10 @@
   "homepage": "https://shchadilov.github.io/dog-food/",
   "dependencies": {
     "react": "^18.2.0",
+    "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
+    "react-router": "^6.8.1",
+    "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1"
   },
   "scripts": {
