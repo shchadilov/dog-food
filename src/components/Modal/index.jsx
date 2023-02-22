@@ -4,7 +4,7 @@ import './style.css';
 import Signup from './Signup';
 import Login from './Login';
 
-export default function Modal({ modalActive, setModalActive, api, setToken }) {
+export default function Modal({ modalActive, setModalActive }) {
   const [formIsLogin, setFormIsLogin] = useState(true);
 
   let style = {
@@ -16,8 +16,8 @@ export default function Modal({ modalActive, setModalActive, api, setToken }) {
       <div className="modal">
         <h2>{formIsLogin ? 'Войти' : 'Зарегистрироваться'}</h2>
         {formIsLogin ? 
-              <Login change={setFormIsLogin} api={api} setModalActive={setModalActive} setToken={setToken} /> : 
-              <Signup change={setFormIsLogin} api={api} setModalActive={setModalActive} setToken={setToken} />}
+              <Login change={setFormIsLogin} setModalActive={setModalActive} /> : 
+              <Signup change={setFormIsLogin} setModalActive={setModalActive} />}
       </div>
     </div>
   )

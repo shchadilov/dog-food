@@ -13,6 +13,7 @@ import Profile from './pages/Profile.jsx';
 import Product from './pages/Product.jsx';
 
 import Api from './Api';
+import Ctx from './Ctx';
 
 const App = () => {
   const [user, setUser] = useState(localStorage.getItem('user'));
@@ -76,10 +77,17 @@ const App = () => {
   }, [goods]);
 
   return (
-    <>
+    <Ctx.Provider value={{
+      user,
+      token,
+      api,
+      setUser,
+      setToken,
+      setApi,      
+    }}>
       <div className="container">
         <Header 
-            user={user}
+            // user={user}
             logIn={logIn} 
             logOut={logOut}
             goods={goods} 
@@ -88,8 +96,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<Catalog data={visibleGoods} user={user} />} />
-            <Route path="/profile" element={<Profile user={user} />} />
-            <Route path="/catalog/:id" element={<Product />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/catalog/:id" element={<Product api={api} />} />
           </Routes>
           {/* {user ? <Home data={goods} /> : <HomeRestricted />} */}
         </main>
@@ -97,14 +105,12 @@ const App = () => {
       </div>
       <Modal 
           modalActive={modalActive} 
-          setModalActive={setModalActive} 
-          api={api} 
-          setToken={setToken} />
+          setModalActive={setModalActive} />
       <NavMobile 
           user={user}
           logIn={logIn} 
           logOut={logOut} />
-    </>
+    </Ctx.Provider>
   )
 };
 

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 import Search from '../Search/search';
+import Ctx from '../../Ctx';
 
 import logoImg from './img/logo.svg';
 import logoMinImg from './img/logo_min.svg';
 
-export default function Header({ user, logIn, logOut, goods, searchGoods }) {
+export default function Header({ logIn, logOut, goods, searchGoods }) {
+  const {user} = useContext(Ctx);
+
   return (
     <header>
       <div className="logo">

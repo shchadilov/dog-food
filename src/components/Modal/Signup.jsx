@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { ReactComponent as CrossImg } from './img/xmark-solid.svg';
+import Ctx from '../../Ctx';
 
-export default function Signup({ change, api, setModalActive, setToken }) {
+export default function Signup({ change, setModalActive }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordIsOk, setPasswordIsOk] = useState(false);
   const [errorText, setErrorText] = useState('');
+
+  const { api, setToken } = useContext(Ctx);
 
   const checkPassword = (val, type = 'main') => {
     if (typeof val !== 'string') return;

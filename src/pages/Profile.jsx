@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Ctx from '../Ctx';
 
-export default function Profile({ user }) {  
+export default function Profile() {
+  const { user } = useContext(Ctx);
+
   return (
-  <>
-  {user}
-  </> 
+    <>
+      <h1>Личный кабинет</h1>
+      <p>Привет, {user}</p>
+    </>
   );
 
 }

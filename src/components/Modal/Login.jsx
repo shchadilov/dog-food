@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { ReactComponent as CrossImg } from './img/xmark-solid.svg';
 
-export default function Login({ change, api, setModalActive, setToken }) {
+import Ctx from '../../Ctx';
+
+export default function Login({ change, setModalActive }) {
+  const { api, setToken } = useContext(Ctx);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorText, setErrorText] = useState('');
