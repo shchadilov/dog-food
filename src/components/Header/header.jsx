@@ -29,7 +29,7 @@ export default function Header() {
       <nav className="menu">
         {user && <Link to="/add" className="menu__element add-icon"><PlusCircle /></Link>}
         {user && <CartIcon />}
-        {!user && <button onClick={logIn} className="menu__element profile-icon" ><ProfileIcon /></button>}
+        {!user && <div onClick={logIn} className="menu__element profile-icon" ><ProfileIcon /></div>}
         {user && <Link to="/profile" className="menu__element profile-icon"><ProfileIcon /></Link>}
       </nav>
     </header>
