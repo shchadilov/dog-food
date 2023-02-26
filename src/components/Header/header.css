@@ -1,5 +1,5 @@
 header {
-  background-color: #05f398;
+  background-color: #42f0ad;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +30,31 @@ header>* {
 .menu {
   flex: 1 400px;
   justify-content: flex-end;
+  align-items: center;
   display: flex;
-  gap: 1em;
+  gap: 30px;
+}
+
+.menu__element {
+ cursor: pointer;
+}
+
+.menu__element svg {
+  height: 100%;
+  width: 100%;
+}
+
+.menu .add-icon {
+  height: 22px;
+  width: 22px;
+}
+
+.menu .cart-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.menu .profile-icon {
+  height: 28px;
+  width: 28px;
 }

@@ -1,0 +1,27 @@
+.review-card {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 8.1em;
+  width: 384px;
+  padding: 0.75em;
+  line-height: 1.1em;
+  box-shadow: 0 0 5px #2226;
+  border-radius: 10px;
+}
+
+.review-card__rating {
+  font-size: 0.9em;
+}
+
+.review-card__text {
+  display: inline-block;
+  height: 3.3em;
+  overflow: hidden;
+  margin: 1.1em 0 0 0;
+}
+
+@media (max-width: 400px) {
+  .review-card {
+    width: 304px;
+  }
+}

@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { EmojiFrown } from 'react-bootstrap-icons';
+import Ctx from '../Ctx';
 
 import Card from '../components/Card';
 
-export default function Catalog({ data, user }) {
+export default function Catalog() {
+  const { visibleGoods, user } = useContext(Ctx);
+
   return (
     <>
-      {(data.length > 0) ?
+      {(visibleGoods.length > 0) ?
         <>
-          <h1>Каталог товаров</h1>
+          <h1 className="catalog-header">Каталог товаров</h1>
           <div className="cards" >
-            {data.map((el, i) =>
-              
+            {visibleGoods.map((el, i) =>              
                 <Card key={el._id} id={el._id} text={el.name} img={el.pictures} price={el.price} />
               )}
           </div>

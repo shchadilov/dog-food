@@ -1,7 +1,8 @@
 import React from 'react';
-import { Star, StarFill } from 'react-bootstrap-icons'
+import { Star, StarFill } from 'react-bootstrap-icons';
+import './review.css';
 
-export default ({ author, rating, created_at }) => {
+export default function Review({ rating, created_at, text }) {
   const setRating = (n) => {
     let stars = [];
     for (let i = 0; i < n; i++) {
@@ -12,9 +13,11 @@ export default ({ author, rating, created_at }) => {
     }
     return stars;
   }
-  return <>
-    <h3>{author || ''}</h3>
-    <div>{setRating(rating)}</div>
-    <div>{new Date(created_at).toLocaleDateString('ru', {day: 'numeric', month: 'short', year: 'numeric'})}</div>
-  </>
+  return (
+    <div className="review-card">      
+      <div className="review-card__rating">{setRating(rating)}</div>
+      <div>{new Date(created_at).toLocaleDateString('ru', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+      <p className="review-card__text">{text}</p>
+    </div>
+  )
 }

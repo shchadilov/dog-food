@@ -12,7 +12,7 @@ export default function Greeting() {
       </div>
       <div className="greeting__subtitle">
         Всегда свежие лакомства ручной <br />
-        работы с доставкой по России и Миру <Link to="/catalog">Ссылка</Link>
+        работы с доставкой по России и Миру <br /><Link to="/catalog" className="greeting__link">КАТАЛОГ</Link>
       </div>
     </div>
   );

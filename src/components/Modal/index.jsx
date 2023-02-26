@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './style.css';
+
+import Ctx from '../../Ctx';
 
 import Signup from './Signup';
 import Login from './Login';
 
-export default function Modal({ modalActive, setModalActive }) {
+export default function Modal() {
+  const { modalActive } = useContext(Ctx);
   const [formIsLogin, setFormIsLogin] = useState(true);
 
   let style = {
@@ -16,8 +19,8 @@ export default function Modal({ modalActive, setModalActive }) {
       <div className="modal">
         <h2>{formIsLogin ? 'Войти' : 'Зарегистрироваться'}</h2>
         {formIsLogin ? 
-              <Login change={setFormIsLogin} setModalActive={setModalActive} /> : 
-              <Signup change={setFormIsLogin} setModalActive={setModalActive} />}
+              <Login change={setFormIsLogin} /> : 
+              <Signup change={setFormIsLogin} />}
       </div>
     </div>
   )

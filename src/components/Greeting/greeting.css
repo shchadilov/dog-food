@@ -9,12 +9,21 @@
   font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 2.5em;
-  line-height: 1em; 
+  line-height: 1em;
   margin-bottom: 0.1em;
 }
 
 .greeting__subtitle {
   font-size: 1.2em;
-  line-height: 1em; 
+  line-height: 1em;
 }
 
+@media (max-width: 720px) {
+  .greeting__title {
+    font-size: 26px;
+  }
+
+  .greeting__subtitle {
+    font-size: 16px;
+  }
+}

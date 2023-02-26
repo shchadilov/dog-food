@@ -31,8 +31,26 @@ a {
   padding: 0 calc(50% - 600px);
 }
 
+footer span {
+  margin: 0 10px;
+}
+
 .greeting {
   margin-top: 20px;
+}
+
+.greeting .greeting__link {
+  display: inline-block;
+  margin-top: 1.5em;
+  font-weight: 700;
+  color: white;
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
+  border: none;
+  font-family: 'Roboto';
+  padding: 9px 13px;
+  border-radius: 10px;
+  background-color: #532d52;
 }
 
 .banners {
@@ -53,7 +71,8 @@ a {
   border-radius: 20px;
 }
 
-.banner_big, .banner-link_big {
+.banner_big,
+.banner-link_big {
   grid-row-end: span 2;
 }
 
@@ -65,17 +84,39 @@ button.btn {
   background-color: gold;
 }
 
+.bootstrap-scope .btn {
+  height: auto;
+}
+
 button.link {
   background-color: transparent;
   border: 1px solid gold;
   box-sizing: border-box;
 }
 
+button.button-trash {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+  cursor: pointer;
+  height: auto;
+
+}
+
+button.btn_exit-profile {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.catalog-header {
+  margin-left: 10px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
-  margin-bottom: 10px;
+  margin: 0 10px 10px;
 }
 
 .cards a {
@@ -93,7 +134,7 @@ button.link {
 
 .no-results-block svg {
   font-size: 4rem;
-  fill: #dedede;  
+  fill: #dedede;
 }
 
 .no-results-block .btn {
@@ -104,8 +145,122 @@ button.link {
 
 }
 
+.profile {
+  margin: 0 10px;
+}
+
+.avatar {
+  max-height: 200px;
+}
+
+.avatar__image {
+  max-height: inherit;
+}
+
+.user-description dl {
+  line-height: 1.2em;
+}
+
+.user-description dt {
+  font-weight: bold;
+}
+
+.user-description dd {
+  margin-inline: 0px;
+  margin-bottom: 0.6em;
+}
+
+.back-link {
+  display: flex;
+  justify-content: space-between;
+  width: 6.8em;
+  margin: 10px 0px 10px 10px;
+}
+
+.product-heading h1 {
+  margin: 0.67em 8px;
+}        
+
+.product {
+  display: flex;
+}
+
+.product-image {
+  width: 65%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 30em;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.product-image__discount-label {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 7em;
+  background-color: #f34336;
+  color: white;
+  padding: 0.1em 0.4em;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.product-data {
+  box-sizing: border-box;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0 8px;
+}
+
+.product-data__price {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.product-data__old-price {
+  margin-left: 0.7em;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: gray;
+  text-decoration-line: line-through;
+}
+
+.product-data__description {
+  line-height: 1.2em;
+}
+
+.reviews h2 {
+  margin: 0.83em 8px;
+}        
+
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 8px 20px;
+}
+
 .nav-mobile {
   display: none;
+}
+
+.form-preview {
+  height: 106px;
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1260px) {
@@ -120,11 +275,11 @@ button.link {
 
 @media (max-width: 1200px) {
   .greeting {
-    margin-top: 10px;    
+    margin: 10px 10px 0;
   }
 
   .banners {
-    margin: 10px 0;    
+    margin: 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,12 +288,12 @@ button.link {
 
   .banner_big {
     width: 500px;
-  }  
+  }
 }
 
 @media (max-width: 720px) {
   .container {
-    grid-template-rows: 50px auto 50px;
+    grid-template-rows: 50px auto 60px;
   }
 
   .container>* {
@@ -160,6 +315,26 @@ button.link {
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .back-link {
+    margin: 20px 0px 20px 10px;
+  }
+
+  .product-heading h1 {
+    margin: 0em 8px;
+  }
+
+  .product {
+    display: block;
+  }
+  
+  .product-image {
+    width: 100%;
+  }
+
+  .product-data {
+    width: 100%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -177,5 +352,3 @@ button.link {
     justify-content: center;
   }
 }
-
-

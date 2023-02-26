@@ -2,14 +2,14 @@ import React, { useState, useContext } from "react";
 import { ReactComponent as CrossImg } from './img/xmark-solid.svg';
 import Ctx from '../../Ctx';
 
-export default function Signup({ change, setModalActive }) {
+export default function Signup({ change }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordIsOk, setPasswordIsOk] = useState(false);
   const [errorText, setErrorText] = useState('');
 
-  const { api, setToken } = useContext(Ctx);
+  const { api, setToken, setModalActive } = useContext(Ctx);
 
   const checkPassword = (val, type = 'main') => {
     if (typeof val !== 'string') return;
@@ -36,7 +36,7 @@ export default function Signup({ change, setModalActive }) {
             api.signIn(body)
               .then(res => res.json())
               .then(data => {
-                localStorage.setItem('user', data.data.name);
+                localStorage.setItem('user', JSON.stringify(data.data));
                 localStorage.setItem('token', data.token);
                 setToken(data.token);
               });

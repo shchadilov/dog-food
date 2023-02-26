@@ -32,4 +32,5 @@
 button.add-to-cart {
   padding: 7px 20px 13px 20px;
   font-weight: bold;
+  cursor: pointer;
 }

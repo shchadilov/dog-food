@@ -11,12 +11,18 @@ import Home from './pages/Home.jsx';
 import Catalog from './pages/Catalog.jsx';
 import Profile from './pages/Profile.jsx';
 import Product from './pages/Product.jsx';
+import AddForm from './pages/AddForm.jsx';
 
 import Api from './Api';
 import Ctx from './Ctx';
 
 const App = () => {
-  const [user, setUser] = useState(localStorage.getItem('user'));
+  let userLocalData = localStorage.getItem('user');
+  if (userLocalData) {
+    userLocalData = JSON.parse(userLocalData);
+  }
+
+  const [user, setUser] = useState(userLocalData);
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [modalActive, setModalActive] = useState(false);
   const [api, setApi] = useState(new Api(token));
@@ -43,7 +49,6 @@ const App = () => {
       api.getProducts()
           .then(res => res.json())
           .then(data => {
-            console.log(data);
             setGoods(data.products);
           });
     }
@@ -52,7 +57,11 @@ const App = () => {
 
   useEffect(() => {
     setApi(new Api(token));
-    setUser(localStorage.getItem('user'));
+    let userLocalData = localStorage.getItem('user');
+    if (userLocalData) {
+      userLocalData = JSON.parse(userLocalData);
+    }
+    setUser(userLocalData);
   }, [token]);
 
   useEffect(() => {
@@ -81,35 +90,33 @@ const App = () => {
       user,
       token,
       api,
+      modalActive,
+      goods,
+      visibleGoods,
       setUser,
       setToken,
-      setApi,      
+      setApi,
+      setModalActive,
+      setGoods,
+      setVisibleGoods,
+      logIn,
+      logOut,      
     }}>
       <div className="container">
-        <Header 
-            // user={user}
-            logIn={logIn} 
-            logOut={logOut}
-            goods={goods} 
-            searchGoods={setVisibleGoods} />
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog data={visibleGoods} user={user} />} />
+            <Route path="/catalog" element={<Catalog />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/catalog/:id" element={<Product api={api} />} />
+            <Route path="/catalog/:id" element={<Product />} />
+            <Route path="/add" element={<AddForm />} />
           </Routes>
-          {/* {user ? <Home data={goods} /> : <HomeRestricted />} */}
         </main>
         <Footer />
       </div>
-      <Modal 
-          modalActive={modalActive} 
-          setModalActive={setModalActive} />
-      <NavMobile 
-          user={user}
-          logIn={logIn} 
-          logOut={logOut} />
+      <Modal />
+      <NavMobile />
     </Ctx.Provider>
   )
 };

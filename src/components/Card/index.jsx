@@ -10,7 +10,7 @@ export default function Card({ id, text, img, price }) {
         <div className="card__title">{text}</div>
       </Link>
       <Link to={`/catalog/${id}`}>
-        <img src={img} alt="Изображение продукта" />
+        <img src={img} alt={text} />
       </Link>
       <Link to={`/catalog/${id}`}>
         <div className="card__price">{price} ₽</div>

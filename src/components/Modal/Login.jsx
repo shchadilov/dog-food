@@ -3,8 +3,8 @@ import { ReactComponent as CrossImg } from './img/xmark-solid.svg';
 
 import Ctx from '../../Ctx';
 
-export default function Login({ change, setModalActive }) {
-  const { api, setToken } = useContext(Ctx);
+export default function Login({ change }) {
+  const { api, setToken, setModalActive } = useContext(Ctx);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +22,7 @@ export default function Login({ change, setModalActive }) {
         .then(res => res.json())
         .then(data => {
           if (!data.err) {
-            localStorage.setItem('user', data.data.name);
+            localStorage.setItem('user', JSON.stringify(data.data));
             localStorage.setItem('token', data.token);
             setToken(data.token);
             setEmail('');

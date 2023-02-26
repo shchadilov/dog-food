@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/dog-food/static/css/main.b4eebf8f.css",
-    "main.js": "/dog-food/static/js/main.32380642.js",
-    "static/media/banner1.png": "/dog-food/static/media/banner1.15016d28861f1bed1053.png",
+    "main.css": "/dog-food/static/css/main.e553930f.css",
+    "main.js": "/dog-food/static/js/main.b3c9b18e.js",
+    "static/media/banner1.png": "/dog-food/static/media/banner1.df15429bb54295139195.png",
+    "static/media/banner3.png": "/dog-food/static/media/banner3.39b9132d7dbcf4acd5b2.png",
+    "static/media/banner2.png": "/dog-food/static/media/banner2.b8ae32f7aeb1203757c2.png",
     "static/media/logo.svg": "/dog-food/static/media/logo.451d3e7a122ed0d35f9fbc7c206aeef3.svg",
     "static/media/logo_min.svg": "/dog-food/static/media/logo_min.11e76a78dc5e393c9fa1de96b290c881.svg",
     "static/media/ic-profile.svg": "/dog-food/static/media/ic-profile.88459b659812d74c083cb437414a35d1.svg",
     "index.html": "/dog-food/index.html",
     "static/media/circle-xmark-regular.svg": "/dog-food/static/media/circle-xmark-regular.3c4b225d898d2b54b9f5fbecb83ac8cc.svg",
+    "static/media/ic-cart.svg": "/dog-food/static/media/ic-cart.36351405bb13de945ab1f9699d66d925.svg",
+    "static/media/house-solid.svg": "/dog-food/static/media/house-solid.6085a0c3c3f9ed3b5bb15e3728f99537.svg",
     "static/media/xmark-solid.svg": "/dog-food/static/media/xmark-solid.5ef1222a816bde743a175e947811d385.svg",
     "static/media/magnifying-glass-solid.svg": "/dog-food/static/media/magnifying-glass-solid.bf7c00a4cf3b50288170bca48fe9fd9a.svg",
-    "main.b4eebf8f.css.map": "/dog-food/static/css/main.b4eebf8f.css.map",
-    "main.32380642.js.map": "/dog-food/static/js/main.32380642.js.map"
+    "main.e553930f.css.map": "/dog-food/static/css/main.e553930f.css.map",
+    "main.b3c9b18e.js.map": "/dog-food/static/js/main.b3c9b18e.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4eebf8f.css",
-    "static/js/main.32380642.js"
+    "static/css/main.e553930f.css",
+    "static/js/main.b3c9b18e.js"
   ]
 }
