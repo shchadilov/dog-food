@@ -39,14 +39,15 @@ export default function Product() {
           <ArrowLeft /> В КАТАЛОГ
         </div>
       </Link>
+
       <div className="product-heading">
         <h1>{product.name || 'Страница товара'}</h1>
-        {product && product.author && product.author._id === user._id && <button
+      </div>
+      {product && product.author && product.author._id === user._id && <button
             onClick={remove} 
             className="btn button-trash">
               <Trash3 />
             </button>}
-      </div>
 
       <div className="product">
         <div className="product-image">

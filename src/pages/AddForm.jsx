@@ -58,39 +58,39 @@ export default function AddForm() {
   };
 
   return (
-    <div className='bootstrap-scope'>
+    <div className="bootstrap-scope">
       <h1>Добавить товар</h1>
       <Form onSubmit={handler}>
         <Row>
           <Col xs={12} md={6}>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Название товара</Form.Label>
               <Form.Control
-                type='text'
+                type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Цена</Form.Label>
               <Form.Control
-                type='number'
+                type="number"
                 value={price}
                 onChange={e => setPrice(e.target.value)}
-                step='10'
-                min={0}
+                step="0.01"
+                min="0"
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Вес</Form.Label>
               <Form.Control
-                type='text'
+                type="text"
                 value={wight}
-                placeholder='100 г'
+                placeholder="100 г"
                 onChange={e => setWight(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Скидка</Form.Label>
               <Form.Select
                 value={discount}
@@ -104,10 +104,10 @@ export default function AddForm() {
                 <option value={25}>25%</option>
               </Form.Select>
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Количество</Form.Label>
               <Form.Control
-                type='number'
+                type="number"
                 value={stock}
                 onChange={e => setStock(e.target.value)}
                 min={0}
@@ -115,29 +115,29 @@ export default function AddForm() {
             </Form.Group>
           </Col>
           <Col xs={12} md={6}>
-            <div className='form-preview mb-2' style={{
+            <div className="form-preview mb-2" style={{
               backgroundImage: pictures ?
                 `url(${pictures})` :
                 `url(${defaultProductImg})`
             }} />
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Изображение</Form.Label>
               <Form.Control
-                type='url'
+                type="url"
                 value={pictures}
                 onChange={e => setPictures(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className="mb-3">
               <Form.Label>Описание</Form.Label>
               <Form.Control
-                as='textarea'
+                as="textarea"
                 rows={4}
                 value={description}
                 onChange={e => setDescription(e.target.value)}
               />
             </Form.Group>
-            <Button variant={'primary'} type='submit'>
+            <Button variant="primary" type="submit">
               Добавить
             </Button>
           </Col>
