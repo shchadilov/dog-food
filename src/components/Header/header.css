@@ -37,6 +37,7 @@ header>* {
 
 .menu__element {
  cursor: pointer;
+ position: relative;
 }
 
 .menu__element svg {
@@ -57,4 +58,21 @@ header>* {
 .menu .profile-icon {
   height: 28px;
   width: 28px;
+}
+
+.icon-badge {
+display: flex;
+position: absolute;
+top: 0px;
+right: -2px;
+box-sizing: border-box;
+border-radius: 8px;
+height: 18px;
+font-size: 14px;
+padding: 0 6px;
+color: white;
+font-family: 'Roboto';
+font-weight: 700;
+background: #532d52;
+align-items: center;
 }

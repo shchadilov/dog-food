@@ -26,7 +26,7 @@ export default function NavMobile() {
 
       {user && 
           <div className="nav-mobile__icon">
-            <Link to="/"><CartIcon /></Link>    
+            <Link to="/cart"><CartIcon /></Link>    
             <div className="icon__title">Корзина</div>
           </div>}
       

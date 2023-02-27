@@ -4,7 +4,6 @@ import './header.css';
 import Search from '../Search/search';
 import Ctx from '../../Ctx';
 import { PlusCircle } from 'react-bootstrap-icons';
-import { Badge } from 'react-bootstrap';
 
 import logoImg from './img/logo.svg';
 import logoMinImg from './img/logo_min.svg';
@@ -29,9 +28,9 @@ export default function Header() {
       </div>
       <nav className="menu">
         {user && <Link to="/add" className="menu__element add-icon"><PlusCircle /></Link>}
-        {user && <Link to="/profile" className="menu__element profile-icon">
+        {user && <Link to="/cart" className="menu__element profile-icon">
             <CartIcon />
-            <Badge>{cart.length}</Badge>
+            {cart.length > 0 && <div className="icon-badge">{cart.length}</div>}
             </Link>}
         {!user && <div onClick={logIn} className="menu__element profile-icon" ><ProfileIcon /></div>}
         {user && <Link to="/profile" className="menu__element profile-icon"><ProfileIcon /></Link>}
