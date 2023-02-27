@@ -15,4 +15,6 @@ export default React.createContext({
   setVisibleGoods: () => {},
   logIn: () => {},
   logOut: () => {},
+  cart: [],
+  setCart: () => {}
 });

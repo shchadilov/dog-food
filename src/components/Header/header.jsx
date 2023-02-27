@@ -4,6 +4,7 @@ import './header.css';
 import Search from '../Search/search';
 import Ctx from '../../Ctx';
 import { PlusCircle } from 'react-bootstrap-icons';
+import { Badge } from 'react-bootstrap';
 
 import logoImg from './img/logo.svg';
 import logoMinImg from './img/logo_min.svg';
@@ -11,7 +12,7 @@ import { ReactComponent as ProfileIcon } from './img/ic-profile.svg';
 import { ReactComponent as CartIcon } from './img/ic-cart.svg';
 
 export default function Header() {
-  const { user, logIn } = useContext(Ctx);
+  const { user, logIn, cart } = useContext(Ctx);
 
   return (
     <header>
@@ -28,7 +29,10 @@ export default function Header() {
       </div>
       <nav className="menu">
         {user && <Link to="/add" className="menu__element add-icon"><PlusCircle /></Link>}
-        {user && <CartIcon />}
+        {user && <Link to="/profile" className="menu__element profile-icon">
+            <CartIcon />
+            <Badge>{cart.length}</Badge>
+            </Link>}
         {!user && <div onClick={logIn} className="menu__element profile-icon" ><ProfileIcon /></div>}
         {user && <Link to="/profile" className="menu__element profile-icon"><ProfileIcon /></Link>}
       </nav>

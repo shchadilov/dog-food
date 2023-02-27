@@ -12,6 +12,7 @@ import Catalog from './pages/Catalog.jsx';
 import Profile from './pages/Profile.jsx';
 import Product from './pages/Product.jsx';
 import AddForm from './pages/AddForm.jsx';
+import Cart from './pages/Cart.jsx';
 
 import Api from './Api';
 import Ctx from './Ctx';
@@ -28,6 +29,7 @@ const App = () => {
   const [api, setApi] = useState(new Api(token));
   const [goods, setGoods] = useState([]);
   const [visibleGoods, setVisibleGoods] = useState(goods);
+  const [cart, setCart] = useState(localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []);
 
   const navigate = useNavigate();
 
@@ -85,6 +87,11 @@ const App = () => {
     setVisibleGoods(goods);
   }, [goods]);
 
+  useEffect(() => {
+    console.log('cart', cart)
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <Ctx.Provider value={{
       user,
@@ -93,12 +100,14 @@ const App = () => {
       modalActive,
       goods,
       visibleGoods,
+      cart,
       setUser,
       setToken,
       setApi,
       setModalActive,
       setGoods,
       setVisibleGoods,
+      setCart,
       logIn,
       logOut,      
     }}>
@@ -111,6 +120,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/catalog/:id" element={<Product />} />
             <Route path="/add" element={<AddForm />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
         <Footer />
