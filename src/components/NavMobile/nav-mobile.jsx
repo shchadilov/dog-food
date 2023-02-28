@@ -15,7 +15,7 @@ export default function NavMobile() {
   return (
     <nav className="nav-mobile">
       <div className="nav-mobile__icon">
-       <Link to="/catalog"><HomeIcon /></Link>
+       <Link to="/"><HomeIcon /></Link>
         <div className="icon__title">Главная</div>
       </div>
 
