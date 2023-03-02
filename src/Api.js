@@ -96,7 +96,7 @@ class Api {
 
   deleteProduct(id) {
     return fetch(`${this.path}/products/${id}`, {
-      method: 'PATCH',
+      method: 'DELETE',
       headers: {
         'authorization': `Bearer ${this.token}`,
       }

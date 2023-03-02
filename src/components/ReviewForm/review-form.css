@@ -1,0 +1,27 @@
+.review-form {
+  margin: 0 8px 20px;
+  display: grid;
+  gap: 0.5em;
+}
+
+.review-form__rating {
+  width: max-content;
+}
+
+.review-form__text {
+  resize: none;
+  width: 30em;
+  height: 4em;
+}
+
+.review-card {
+  position: relative;
+}
+
+@media (max-width: 350px) {
+  .review-form__text {
+    resize: none;
+    width: 20em;
+    height: 4em;
+  }
+}

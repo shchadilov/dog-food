@@ -20,6 +20,13 @@
   margin: 1.1em 0 0 0;
 }
 
+.review-card__delete {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  margin: 0;
+}
+
 @media (max-width: 400px) {
   .review-card {
     width: 304px;

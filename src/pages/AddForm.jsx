@@ -47,7 +47,7 @@ export default function AddForm() {
       });
   }
 
-  const clear = (e) => {
+  const clear = () => {
     setName('');
     setPrice(100);
     setWight('');
@@ -58,10 +58,10 @@ export default function AddForm() {
   };
 
   return (
-    <div className="bootstrap-scope">
+    <div className="bootstrap-scope add-form-wrapper">
       <h1>Добавить товар</h1>
       <Form onSubmit={handler}>
-        <Row>
+        <Row className="bootstrap-override">
           <Col xs={12} md={6}>
             <Form.Group className="mb-3">
               <Form.Label>Название товара</Form.Label>

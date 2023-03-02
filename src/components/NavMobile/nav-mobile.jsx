@@ -9,7 +9,7 @@ import { PlusCircle } from 'react-bootstrap-icons';
 import Ctx from '../../Ctx';
 
 export default function NavMobile() {
-  const { user, logIn } = useContext(Ctx);
+  const { user, logIn, cart } = useContext(Ctx);
   const navigate = useNavigate();
 
   return (
@@ -26,7 +26,9 @@ export default function NavMobile() {
 
       {user && 
           <div className="nav-mobile__icon">
-            <Link to="/cart"><CartIcon /></Link>    
+            <Link to="/cart"><CartIcon />
+            {cart.length > 0 && <div className="icon-badge icon-badge_mobile">{cart.length}</div>}
+            </Link>    
             <div className="icon__title">Корзина</div>
           </div>}
       

@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {useParams, Link, useNavigate} from 'react-router-dom';
-import {Trash3} from 'react-bootstrap-icons';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Trash3 } from 'react-bootstrap-icons';
 import Review from '../components/Review/review';
 import Ctx from '../Ctx';
 import { ArrowLeft } from 'react-bootstrap-icons';
+
+import ReviewForm from '../components/ReviewForm/review-form.jsx'
 
 export default function Product() {
   const {id} = useParams();
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
-  const { token, api, user, setGoods } = useContext(Ctx);
+  const { token, api, user, setGoods, setCart } = useContext(Ctx);
 
   useEffect(() => {
     if (token) {
@@ -30,6 +32,24 @@ export default function Product() {
             navigate('/catalog');
         }
       });
+  }
+
+  const addToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCart(prev => {
+      const test = prev.filter(el => el.id === id)
+      if (test.length) {
+        return prev.map(el => {
+            if (el.id === id) {
+              el.quantity++;
+            }
+            return el; 
+            });
+      } else {
+        return [...prev, {id: id, quantity: 1}];
+      }      
+    });
   }
 
   return (
@@ -63,14 +83,17 @@ export default function Product() {
             </span>
             {product.discount > 0 && <span className="product-data__old-price"><s>{product.price} ₽</s></span>}
           </div>
+          <button className="btn add-to-cart" type="button" onClick={addToCart}>В корзину</button>
           <div className="product-data__description">{product.description}</div>
         </div>
       </div>
       <div className="reviews">
         <h2>Отзывы</h2>
+        <ReviewForm productId={id} setProduct={setProduct} />
         <div className="review-cards">
           {product.reviews && product.reviews.length === 0 && <span>Отзывов пока нет</span>}
-          {product.reviews && product.reviews.length > 0 && product.reviews.map((el) => <Review {...el} key={el._id} />)}
+          {product.reviews && product.reviews.length > 0 && 
+              product.reviews.map((el) => <Review {...el} productId={id} setProduct={setProduct} key={el._id} />)}
         </div>
       </div>
     </>

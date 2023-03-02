@@ -110,7 +110,7 @@ const App = () => {
       logIn,
       logOut,      
     }}>
-      <div className="container">
+      <div className="wrapper">
         <Header />
         <main>
           <Routes>

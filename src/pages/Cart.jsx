@@ -21,8 +21,8 @@ export default function Cart() {
 
   return (
     <div className="bootstrap-scope">
-      <h1>Корзина</h1>
-        {cart.length > 0 && gds.length > 0 && <Table hover>
+      <h1 className="cart__header">Корзина</h1>
+        {cart.length > 0 && gds.length > 0 && <Table className="cart__table" hover>
             <thead>
                 <tr>
                     <th>Изображение</th>
@@ -36,7 +36,8 @@ export default function Cart() {
             </tbody>
             <tfoot>
                 <tr>
-                    <td colSpan={3} className="text-end fw-bold fs-3">ИТОГО:</td>
+                    <td colSpan={3} className="text-end fw-bold fs-3 total-title_desktop">ИТОГО:</td>
+                    <td colSpan={2} className="text-end fw-bold fs-3 total-title_mobile">ИТОГО:</td>
                     <td className="fw-bold fs-3">
                         {cart.reduce((acc, el, i) => {
                             acc += el.quantity * (gds[i].price / 100 * (100 - gds[i].discount) );

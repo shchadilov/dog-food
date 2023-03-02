@@ -12,22 +12,22 @@ a {
   color: inherit;
 }
 
-.container {
+.wrapper {
   min-height: 100vh;
   display: grid;
   grid-template-rows: 100px auto 50px;
 }
 
-.container header {
+.wrapper header {
   padding: 0 calc(50% - 720px);
 }
 
-.container main {
+.wrapper main {
   padding: 0 calc(50% - 600px);
   background-color: white;
 }
 
-.container footer {
+.wrapper footer {
   padding: 0 calc(50% - 600px);
 }
 
@@ -113,8 +113,24 @@ button.btn_exit-profile {
   cursor: pointer;
 }
 
+button.btn_add-review {
+  height: 2.4em;
+  width: 6em;
+}
+
 .catalog-header {
   margin-left: 10px;
+}
+
+.catalog-toggles {
+  display: flex;
+  gap: 0.5em;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.catalog-toggles button {
+  cursor: pointer;
 }
 
 .cards {
@@ -154,16 +170,33 @@ button.btn_exit-profile {
   margin: 0 10px;
 }
 
+.profile svg {
+  cursor: pointer;
+}
+
 .avatar {
   max-height: 200px;
+  position: relative;
 }
 
 .avatar__image {
   max-height: inherit;
 }
 
-.user-description dl {
-  line-height: 1.2em;
+.avatar .user-edit-row {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.avatar .user-edit-row {
+  background-color: white;
+  padding: 0.4em;
+  border-radius: 0.2em;
+}
+
+.user-description {
+  line-height: 1.2rem;
 }
 
 .user-description dt {
@@ -175,6 +208,27 @@ button.btn_exit-profile {
   margin-bottom: 0.6em;
 }
 
+.user-edit-row {
+  display: flex;
+  gap: 0.3em;
+  margin-bottom: 0.6em;
+  align-items: center;
+  height: 1.2rem;
+}
+
+.user-edit-row input {
+  width: 10em;
+}
+
+.user-description dd svg {
+  margin-left: 0.3em;
+}
+
+.user-edit-row svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
 .back-link {
   display: flex;
   justify-content: space-between;
@@ -184,7 +238,7 @@ button.btn_exit-profile {
 
 .product-heading h1 {
   margin: 0.67em 8px;
-}        
+}
 
 .product {
   display: flex;
@@ -199,7 +253,7 @@ button.btn_exit-profile {
 
 .product-image img {
   max-width: 100%;
-  max-height: 30em;
+  max-height: 25em;
   box-sizing: border-box;
   padding: 1em;
 }
@@ -225,6 +279,7 @@ button.btn_exit-profile {
   width: 35%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5em;
   padding: 0 8px;
 }
@@ -248,7 +303,7 @@ button.btn_exit-profile {
 
 .reviews h2 {
   margin: 0.83em 8px;
-}        
+}
 
 .review-cards {
   display: flex;
@@ -268,8 +323,40 @@ button.btn_exit-profile {
   background-repeat: no-repeat;
 }
 
+.add-form-wrapper {
+  margin: 8px;
+}
+
+.cart__header {
+  margin-left: 8px;
+}
+
+.cart__table .total-title_desktop {
+  display: table-cell;
+}
+
+.cart__table .total-title_mobile {
+  display: none;
+}
+
+.cart__table thead th:nth-child(1),
+.cart__table tbody td:nth-child(1) {
+  width: 6.25em;
+}
+
+.cart__table thead th:nth-child(3),
+.cart__table tbody td:nth-child(3) {
+  width: 8em;
+}
+
+.cart__table thead th:nth-child(4),
+.cart__table tbody td:nth-child(4) {
+  width: 8em;
+}
+
+
 @media (max-width: 1260px) {
-  .container>* {
+  .wrapper>* {
     padding: 0 30px;
   }
 
@@ -297,11 +384,11 @@ button.btn_exit-profile {
 }
 
 @media (max-width: 720px) {
-  .container {
+  .wrapper {
     grid-template-rows: 50px auto 60px;
   }
 
-  .container>* {
+  .wrapper>* {
     padding: 0 30px;
   }
 
@@ -321,6 +408,18 @@ button.btn_exit-profile {
     grid-template-columns: 1fr;
   }
 
+  .catalog-header {
+    margin: 0 10px;
+  }
+
+  .catalog-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 4px 8px 8px;
+    cursor: pointer;
+  }
+
   .back-link {
     margin: 20px 0px 20px 10px;
   }
@@ -332,13 +431,30 @@ button.btn_exit-profile {
   .product {
     display: block;
   }
-  
+
   .product-image {
     width: 100%;
   }
 
   .product-data {
     width: 100%;
+  }
+
+  .cart__table thead th:nth-child(1),
+  .cart__table tbody td:nth-child(1) {
+    display: none;
+  }
+
+  .cart__table .total-title_desktop {
+    display: none;
+  }
+
+  .cart__table .total-title_mobile {
+    display: table-cell;
+  }
+
+  .bootstrap-scope .row.bootstrap-override {
+    --bs-gutter-x: unset;
   }
 }
 
