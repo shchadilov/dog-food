@@ -13,6 +13,8 @@ export default function Catalog() {
   const paginate = usePagination(sortGoods, 12);
   const [btnType, setBtnType] = useState('');
 
+  const calcPrice = (obj) => obj.price / 100 * (100 - obj.discount);
+
   const updSort = (e) => {
     let el = e.currentTarget;
     let flag = false;
@@ -30,10 +32,10 @@ export default function Catalog() {
       let data = [...visibleGoods];
       switch (el.title) {
         case 'down': 
-          data.sort((a,b) => a.price - b.price);
+          data.sort((a,b) => calcPrice(a) - calcPrice(b));
           break;
         case 'up': 
-          data.sort((a,b) => b.price - a.price);
+          data.sort((a,b) => calcPrice(b) - calcPrice(a));
           break;
         case 'sale': 
           data = data.filter(d => d.discount > 0);

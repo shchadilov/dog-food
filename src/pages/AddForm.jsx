@@ -3,11 +3,6 @@ import Ctx from '../Ctx';
 import { useNavigate } from 'react-router';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 
-// Комментарий для преподавателя, после проверки удалю:
-// в импортируемом файле scss весь Bootstrap завёрнут в правило div.bootstrap-scope {},
-// таким образом он изолирован для кода этого модуля в <div className='bootstrap-scope'></div>.
-// Правда, мобильное меню на этой странице всё равно поломалось, но это это не так уж важно,
-// думаю мне в жизни больше никогда не понадобится внезапно использовать Bootstrap на одной странице.
 import '../bootstrap-scope.scss';
 
 import defaultProductImg from '../img/default_product.png';
