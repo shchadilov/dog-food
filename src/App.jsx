@@ -46,6 +46,14 @@ const App = () => {
     navigate('/'); 
   }
 
+  const calcPrice = (obj) => {
+    let price = 0;
+    if (Number.isFinite(obj.price) && Number.isFinite(obj.discount)) {
+      price = obj.price / 100 * (100 - obj.discount);
+    }    
+    return (price < 0 ? 0 : price);
+  };  
+
   useEffect(() => {
     if (token) { 
       api.getProducts()
@@ -108,7 +116,8 @@ const App = () => {
       setVisibleGoods,
       setCart,
       logIn,
-      logOut,      
+      logOut,
+      calcPrice,      
     }}>
       <div className="wrapper">
         <Header />

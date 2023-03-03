@@ -64,6 +64,7 @@ export default function AddForm() {
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3">

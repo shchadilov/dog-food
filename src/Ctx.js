@@ -16,5 +16,6 @@ export default React.createContext({
   logIn: () => {},
   logOut: () => {},
   cart: [],
-  setCart: () => {}
+  setCart: () => {},
+  calcPrice: () => {},
 });

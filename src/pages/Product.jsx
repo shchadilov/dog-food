@@ -11,7 +11,7 @@ export default function Product() {
   const {id} = useParams();
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
-  const { token, api, user, setGoods, setCart } = useContext(Ctx);
+  const { token, api, user, setGoods, setCart, calcPrice } = useContext(Ctx);
 
   useEffect(() => {
     if (token) {
@@ -78,7 +78,7 @@ export default function Product() {
           <div>            
             <span className="product-data__price">
               {product.discount > 0 ?
-                  product.price / 100 * (100 - product.discount) :
+                  calcPrice(product) :
                   product.price} ₽    
             </span>
             {product.discount > 0 && <span className="product-data__old-price"><s>{product.price} ₽</s></span>}

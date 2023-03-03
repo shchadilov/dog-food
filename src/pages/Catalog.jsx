@@ -8,12 +8,10 @@ import Ctx from '../Ctx';
 import Card from '../components/Card';
 
 export default function Catalog() {
-  const { visibleGoods, user } = useContext(Ctx);
+  const { visibleGoods, user, calcPrice } = useContext(Ctx);
   const [sortGoods, setSortGoods] = useState(visibleGoods);
   const paginate = usePagination(sortGoods, 12);
   const [btnType, setBtnType] = useState('');
-
-  const calcPrice = (obj) => obj.price / 100 * (100 - obj.discount);
 
   const updSort = (e) => {
     let el = e.currentTarget;
@@ -69,7 +67,7 @@ export default function Catalog() {
                     id={el._id} 
                     text={el.name} 
                     img={el.pictures} 
-                    price={el.price / 100 * (100 - el.discount)} 
+                    price={calcPrice(el)} 
                         />)}
           </div>
         </> :
